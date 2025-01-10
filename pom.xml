@@ -124,11 +124,16 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-
-                 <plugin>
-    <groupId>org.jacoco</groupId>
-    <artifactId>jacoco-maven-plugin</artifactId>
-    <version>${jacoco.version}</version>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.0</version>
+            </plugin>
+        
+          <plugin>       
+              <groupId>org.jacoco</groupId>
+              <artifactId>jacoco-maven-plugin</artifactId>
+              <version>${jacoco.version}</version>
     <executions>
         <execution>
             <id>jacoco-initialize</id>
@@ -144,7 +149,7 @@
             </goals>
         </execution>
     </executions>
-</plugin>
+          </plugin>
         </plugins>
     </build>
 
