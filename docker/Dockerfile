@@ -1,11 +1,5 @@
-FROM openjdk:8u151-jdk-alpine3.7
-
+FROM openjdk-17
 EXPOSE 8080
+ADD target/devops-integeration.jar devops-integeration.jar
+ENTRYPOINT ["java", "-jar", "/devops-integeration.jar"]
 
-ENV APP_HOME /usr/src/app
-
-COPY target/shopping-cart-0.0.1-SNAPSHOT.jar $APP_HOME/app.jar
-
-WORKDIR $APP_HOME
-
-ENTRYPOINT exec java -jar app.jar
